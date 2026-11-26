@@ -8,5 +8,9 @@ function formatEntry(): string {
 
 const ENTRY = formatEntry();
 
-mkdirSync("/output", { recursive: true });
-writeFileSync("/output/entry.txt", ENTRY + "\n", "utf8");
+function writeEntry(text: string): void {
+  mkdirSync("/output", { recursive: true });
+  writeFileSync("/output/entry.txt", text + "\n", "utf8");
+}
+
+writeEntry(ENTRY);
